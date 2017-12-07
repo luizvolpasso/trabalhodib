@@ -26,11 +26,7 @@ public class Grafo {
         int distancia;
         for (int i = 0; i < 22; i++){
             for (int j = 0; j < 22; j++){
-                if (i == j) distancias[i][j] = 0;
-                else{
-                    distancia = rand.nextInt(9) + 10;
-                    distancias[i][j] = distancia;
-                }
+                distancias[i][j] = 0;
             }
         }
         distancias[0][1] = 5;

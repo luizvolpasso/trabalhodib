@@ -55,4 +55,26 @@ public class Populacao {
         bests.add(second);
         return bests;
     }
+    
+    public ArrayList<Gene> getWorsts(){
+        ArrayList<Gene> worsts = new ArrayList<Gene>();
+        Iterator it = populacao.iterator();
+        Gene first, second;
+        float firstFit, secondFit;
+        first = null;
+        second = null;
+        firstFit = 0;
+        secondFit = 0;
+        while (it.hasNext()){
+            Gene gene = (Gene)it.next();
+            if ((gene.getFit() >= secondFit) && !(gene.getFit() >= firstFit)) second = gene;
+            if (gene.getFit() >= firstFit){
+                second = first;
+                first = gene;
+            }
+        }
+        worsts.add(first);
+        worsts.add(second);
+        return worsts;
+    }
 }
