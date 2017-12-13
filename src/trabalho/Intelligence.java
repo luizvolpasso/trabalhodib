@@ -49,21 +49,30 @@ public class Intelligence {
     
     private Populacao crossOver(ArrayList<Gene> genes){
         Populacao newPop = new Populacao();
-        Gene gene;
-        char[] node1, node2;
+        Gene gene, newGene;
+        char[] newNode;
         int cutPoint1, cutPoint2;
         Iterator iterator = genes.iterator();
         
         while (iterator.hasNext()){
+        	char[] parte1, parte2;
             gene = (Gene)iterator.next();
-            node1 = gene.getGene();
+            parte1 = gene.getGene();
             cutPoint1 = random.nextInt(node1.length);
             gene = (Gene)iterator.next();
-            node2 = gene.getGene();
+            parte2 = gene.getGene();
             cutPoint2 = random.nextInt(node2.length - cutPoint1) + cutPoint1;
-        }
-        
-        node1.
+            
+            for(int i=0 ; i<cutPoint1; i++){
+            	newNode[i] = parte1[i];
+            }
+            for(int j=cutpoint2 ; cutpoint2 <parte2.lenght; j++){
+            	newNode[j] = parte1[j];
+            }
+            
+            newGene = new Gene(node1);
+            newPop.addGene(newGene)
+        }        
         
         return newPop;
     }
